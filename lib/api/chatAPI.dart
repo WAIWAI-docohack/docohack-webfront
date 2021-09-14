@@ -79,7 +79,7 @@ class ChatAPI extends API {
       String userId, bool like) async {
     String url = 'like';
     Map<String, dynamic> queryParameters = {
-      'user': userId,
+      'userid': userId,
       'like': like,
     };
     await postRequest(url, queryParameters);
