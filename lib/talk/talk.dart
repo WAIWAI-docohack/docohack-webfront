@@ -114,7 +114,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
   void initState() {
     super.initState();
     initAgora();
-    // nextpage();
+    nextpage();
   }
 
   Future<void> initAgora() async {
@@ -148,7 +148,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
     );
 
     await _engine.joinChannel(token, "test", null, 0);
-    nextpage();
+    // nextpage();
   }
 
   void nextpage() async {
