@@ -37,7 +37,7 @@ class _Match_Result extends State<Match_Result> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => Talk(widget.auth,widget.room_id,widget.target_userid)),
+          builder: (context) => Talk_ver2(widget.auth,widget.room_id,widget.target_userid)),
     );
   }
 

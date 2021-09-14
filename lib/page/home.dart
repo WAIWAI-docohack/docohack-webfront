@@ -95,25 +95,25 @@ class _Home extends State<Home> {
               backgroundImage: NetworkImage(
                   widget.auth.getUserBackgroundURL()),
             ),
-            ConstrainedBox(
-              constraints: BoxConstraints.tightFor(width: 250, height: 50),
-              child:
-              ElevatedButton(
-              child: Text('プロフィールを編集します'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                onPrimary: Colors.white,
-                shape: const StadiumBorder(),
-              ),
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Usersetting(widget.auth)),
-                );
-              }
-              ),
-            ),
+            // ConstrainedBox(
+            //   constraints: BoxConstraints.tightFor(width: 250, height: 50),
+            //   child:
+            //   ElevatedButton(
+            //   child: Text('プロフィールを編集します'),
+            //   style: ElevatedButton.styleFrom(
+            //     primary: Colors.green,
+            //     onPrimary: Colors.white,
+            //     shape: const StadiumBorder(),
+            //   ),
+            //   onPressed: (){
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //           builder: (context) => Usersetting(widget.auth)),
+            //     );
+            //   }
+            //   ),
+            // ),
                 
               ],),
               Text(""),

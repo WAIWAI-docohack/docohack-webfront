@@ -57,12 +57,6 @@ class _Talk extends State<Talk> {
     );
   }
 
-  // void count() {
-  //   minute = sec % 60;
-  //   sec = limit - sec * 60;
-  // }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +65,7 @@ class _Talk extends State<Talk> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+
             CircleAvatar(
               backgroundImage: NetworkImage(
                   widget.auth.getUserIdBackgroundURL(widget.target_userid)),
@@ -95,20 +90,31 @@ class _Talk extends State<Talk> {
 }
 
 
-class MyApp extends StatefulWidget {
+class Talk_ver2 extends StatefulWidget {
+  Talk_ver2(this.auth, this.room_id, this.target_userid);
+  Auth auth;
+  String room_id;
+  String target_userid;
+
   @override
-  _MyAppState createState() => _MyAppState();
+  _Talk_ver2 createState() => _Talk_ver2();
 }
 
-class _MyAppState extends State<MyApp> {
+class _Talk_ver2 extends State<Talk_ver2> {
   int _remoteUid = 0;
   bool _localUserJoined = false;
   RtcEngine _engine;
+
+  int limit = 100;
+  int minute = 0;
+  int sec = 0;
+  String infomsg = "残り時間";
 
   @override
   void initState() {
     super.initState();
     initAgora();
+    nextpage();
   }
 
   Future<void> initAgora() async {
@@ -144,12 +150,30 @@ class _MyAppState extends State<MyApp> {
     await _engine.joinChannel(token, "test", null, 0);
   }
 
+  void nextpage() async {
+    while (limit > 0) {
+      await Future.delayed(Duration(milliseconds: 1000));
+      setState(() {
+        limit -= 1;
+        // count();
+
+      });
+    }
+
+    print("talk end");
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => LikeDislike(widget.room_id, widget.auth, widget.target_userid)),
+    );
+  }
+
   // Create UI with local view and remote view
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Agora Video Call'),
+        title: Text(infomsg + limit.toString(),),
       ),
       body: Stack(
         children: [
