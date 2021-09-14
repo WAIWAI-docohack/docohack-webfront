@@ -134,15 +134,15 @@ class _LoginPage extends State<LoginPage> {
                 }
                   }),
             ),
-             TextButton(
-        onPressed: (){
-          Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AccountSignUp(new Auth())),
-                  );
-        },
-        child:Text("Sign up")
-      ),
+      //        TextButton(
+      //   onPressed: (){
+      //     Navigator.push(
+      //               context,
+      //               MaterialPageRoute(builder: (context) => AccountSignUp(new Auth())),
+      //             );
+      //   },
+      //   child:Text("Sign up")
+      // ),
             // RaisedButton(
             //   child: Text('Login now'),
             //   onPressed: () async {
