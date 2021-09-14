@@ -29,7 +29,7 @@ class ChatAPI extends API {
     });
     dynamic response = await postImageRequest(url, formData);
     String filename = response['file_name'];
-    return 'https://restapi-enpit.p0x0q.com/api/images/cupy/$filename';
+    return 'https://restapi-waiwai.p0x0q.com/api/images/cupy/$filename';
   }
 
   Future<List<dynamic>> searchThreads(String query) async {
@@ -73,13 +73,13 @@ class ChatAPI extends API {
   }
   
   // userId: いいねをするユーザーID,
-  // like: true=like, false=dislike
-  // usecase: postLike("target_userid", True)
+  // like: 1=like, 0=dislike
+  // usecase: postLike("target_userid", 1)
   Future<String> postLike(
-      String userId, bool like) async {
+      String userId, int like) async {
     String url = 'like';
     Map<String, dynamic> queryParameters = {
-      'user': userId,
+      'userid': userId,
       'like': like,
     };
     await postRequest(url, queryParameters);
@@ -135,7 +135,7 @@ class ChatAPI extends API {
   }
 
   String chatRoomImageUrl(String roomId) {
-    return 'https://restapi-enpit.p0x0q.com/api/images/room/background/roomid/$roomId/show?i';
+    return 'https://restapi-waiwai.p0x0q.com/api/images/room/background/roomid/$roomId/show?i';
   }
 }
 

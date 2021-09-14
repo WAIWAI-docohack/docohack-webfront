@@ -84,7 +84,7 @@ class _LikeDislike extends State<LikeDislike>{
                     ),
                     onPressed: (){
                       chatapi = new ChatAPI(widget.auth.getBearer());
-                      if(chatapi.postLike(widget.target_userid,true) == 'ok'){
+                      if(chatapi.postLike(widget.target_userid,1) == 'ok'){
                         print('like');
                         Navigator.push(
                           context,
