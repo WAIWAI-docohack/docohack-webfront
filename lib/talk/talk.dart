@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 const appId = "aa46abd9d4f04d06a57b2804ec0135c9";
-const token = "006aa46abd9d4f04d06a57b2804ec0135c9IADSZS1TaOFyyez5vzkNFPS5dIrONFHPsjNrNc0+qN0jPgx+f9gAAAAAIgD+bihbWRtCYQQAAQA/G0JhAgA/G0JhAwA/G0JhBAA/G0Jh";
+const token = "006aa46abd9d4f04d06a57b2804ec0135c9IABuEWUcFXiUJ4i3aLjoEOJsZZWNkYuJ5UvdeaX+DzZSewx+f9gAAAAAIgD+bihbzk5CYQQAAQCzTkJhAgCzTkJhAwCzTkJhBACzTkJh";
 
 
 class Talk extends StatefulWidget {
@@ -200,7 +200,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
 
   // Display remote user's video
   Widget _remoteVideo() {
-    if (_remoteUid != null) {
+    if (_remoteUid != null && _remoteUid != 0) {
       return RtcRemoteView.SurfaceView(uid: _remoteUid);
     } else {
       return Text(
