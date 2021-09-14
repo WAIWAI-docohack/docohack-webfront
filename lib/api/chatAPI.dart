@@ -71,6 +71,20 @@ class ChatAPI extends API {
 
     return "ok";
   }
+  
+  // userId: いいねをするユーザーID,
+  // like: true=like, false=dislike
+  // usecase: postLike("target_userid", True)
+  Future<String> postLike(
+      String userId, bool like) async {
+    String url = 'like';
+    Map<String, dynamic> queryParameters = {
+      'user': userId,
+      'like': like,
+    };
+    await postRequest(url, queryParameters);
+    return "ok";
+  }
 
   Future<List<ChatRoomInfo>> getThreads(int groupId) async {
     String url = 'chat/mychat/group_id';
