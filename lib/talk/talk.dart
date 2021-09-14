@@ -101,9 +101,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int? _remoteUid;
+  int _remoteUid = 0;
   bool _localUserJoined = false;
-  late RtcEngine _engine;
+  RtcEngine _engine;
 
   @override
   void initState() {
@@ -176,7 +176,7 @@ class _MyAppState extends State<MyApp> {
   // Display remote user's video
   Widget _remoteVideo() {
     if (_remoteUid != null) {
-      return RtcRemoteView.SurfaceView(uid: _remoteUid!);
+      return RtcRemoteView.SurfaceView(uid: _remoteUid);
     } else {
       return Text(
         'Please wait for remote user to join',
