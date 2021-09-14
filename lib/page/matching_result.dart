@@ -37,13 +37,16 @@ class _Match_Result extends State<Match_Result> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => Talk(widget.auth,widget.room_id,widget.target_userid)),
+          builder: (context) => Talk_ver2(widget.auth,widget.room_id,widget.target_userid)),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('処理中です'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
