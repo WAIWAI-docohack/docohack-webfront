@@ -200,6 +200,9 @@ class _MattingPage extends State<MattingPage> {
   var _value = 0.0;
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('マッチング中です'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -230,13 +233,13 @@ class _MattingPage extends State<MattingPage> {
                 );
               },
             ),
-            RaisedButton(
-              child: Text('だれとも話せる交流広場へ'),
-              onPressed: () async {
-                await _manager.clearInstance(_sockets[_roomId]);
-                success_navigator();
-              },
-            ),
+            // RaisedButton(
+            //   child: Text('だれとも話せる交流広場へ'),
+            //   onPressed: () async {
+            //     await _manager.clearInstance(_sockets[_roomId]);
+            //     success_navigator();
+            //   },
+            // ),
           ],
         ),
       ),

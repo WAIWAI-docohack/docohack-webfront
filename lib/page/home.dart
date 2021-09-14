@@ -172,36 +172,36 @@ class _Home extends State<Home> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.blue[900],
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-            backgroundColor: Colors.blue[900],
-          ),
-        ],
-        currentIndex: 0,
-        selectedItemColor: Colors.cyan[400],
-        onTap: (int index){
-          _selectedIndex=index;
-          if(index==0){
-      //go to home
-
-    }else if(index==1){
-      //go to chatlog
-      Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ChatHistory(widget.auth)),
-                );
-    }
-        },        
-      ),
+    //   bottomNavigationBar: BottomNavigationBar(
+    //     items: <BottomNavigationBarItem>[
+    //       BottomNavigationBarItem(
+    //         icon: Icon(Icons.home),
+    //         label: 'Home',
+    //         backgroundColor: Colors.blue[900],
+    //       ),
+    //       BottomNavigationBarItem(
+    //         icon: Icon(Icons.chat),
+    //         label: 'Chat',
+    //         backgroundColor: Colors.blue[900],
+    //       ),
+    //     ],
+    //     currentIndex: 0,
+    //     selectedItemColor: Colors.cyan[400],
+    //     onTap: (int index){
+    //       _selectedIndex=index;
+    //       if(index==0){
+    //   //go to home
+    //
+    // }else if(index==1){
+    //   //go to chatlog
+    //   Navigator.push(
+    //               context,
+    //               MaterialPageRoute(
+    //                   builder: (context) => ChatHistory(widget.auth)),
+    //             );
+    // }
+    //     },
+    //   ),
       endDrawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

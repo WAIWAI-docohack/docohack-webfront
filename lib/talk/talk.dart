@@ -17,7 +17,9 @@ class Talk extends StatefulWidget {
 }
 
 class _Talk extends State<Talk> {
-  int sec = 10;
+  int limit = 100;
+  int minute = 0;
+  int sec = 0;
   String infomsg = "残り時間";
   //bool match_res=false;
 
@@ -26,10 +28,12 @@ class _Talk extends State<Talk> {
   }
 
   void nextpage() async {
-    while (sec > 0) {
+    while (limit > 0) {
       await Future.delayed(Duration(milliseconds: 1000));
       setState(() {
-        sec -= 1;
+        limit -= 1;
+        // count();
+
       });
     }
 
@@ -40,6 +44,13 @@ class _Talk extends State<Talk> {
           builder: (context) => LikeDislike(widget.room_id, widget.auth, widget.target_userid)),
     );
   }
+
+  // void count() {
+  //   minute = sec % 60;
+  //   sec = limit - sec * 60;
+  // }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +64,7 @@ class _Talk extends State<Talk> {
                   widget.auth.getUserIdBackgroundURL(widget.target_userid)),
               radius: 100,
             ),
+
             Text(
               '${widget.target_userid}さんとトーク中です',
               style: Theme.of(context).textTheme.headline6,
@@ -60,7 +72,7 @@ class _Talk extends State<Talk> {
             ),
 
             Text(
-              infomsg + sec.toString(),
+              infomsg + limit.toString(),
               style:TextStyle(fontSize: 20),),
 
           ],

@@ -19,11 +19,11 @@ class LikeDislike extends StatefulWidget{
 class _LikeDislike extends State<LikeDislike>{
 
   final TextStyle style1 = TextStyle(
-      fontSize: 30.0,
+      fontSize: 35.0,
       color: Colors.black
   );
   final TextStyle style2 = TextStyle(
-      fontSize: 15.0,
+      fontSize: 20.0,
       color: Colors.black
   );
 
@@ -61,11 +61,16 @@ class _LikeDislike extends State<LikeDislike>{
               child:ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 250, height: 70),
                 child:ElevatedButton(
-                    child: Text('いいねする！'),
+                    child: Text('♡いいねする！',
+                        style:TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w800,
+                        )
+                    ),
                     style: ElevatedButton.styleFrom(
 
                       primary: Colors.white,
-                      onPrimary: Colors.green,
+                      onPrimary: Colors.red,
                       shape: const StadiumBorder(),
                     ),
                     onPressed: (){
@@ -80,11 +85,16 @@ class _LikeDislike extends State<LikeDislike>{
               child:ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 250, height: 70),
                 child:ElevatedButton(
-                    child: Text('閉じる'),
+                    child: Text('閉じる',
+                    style:TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w800,
+                    )),
                     style: ElevatedButton.styleFrom(
 
                       primary: Colors.white,
-                      onPrimary: Colors.green,
+                      onPrimary: Colors.blue,
+
                       shape: const StadiumBorder(),
                     ),
                     onPressed: (){
