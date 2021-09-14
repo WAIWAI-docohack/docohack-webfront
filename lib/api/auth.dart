@@ -26,9 +26,9 @@ class Auth extends API {
   String getDescription() => _user.profileText;
 
   String getUserBackgroundURL() =>
-      'https://restapi-waiwai.p0x0q.com/api/images/user/background/user/${_user.user.toString()}/show?i';
+      'https://restapi-waiwai-aws.p0x0q.com/api/images/user/background/user/${_user.user.toString()}/show?i';
   String getUserIdBackgroundURL(String target_userid) =>
-      'https://restapi-waiwai.p0x0q.com/api/images/user/background/userid/${target_userid}/show?i';
+      'https://restapi-waiwai-aws.p0x0q.com/api/images/user/background/userid/${target_userid}/show?i';
 
   Widget getUserIcon({Widget child}) {
     return _user.icon(child);

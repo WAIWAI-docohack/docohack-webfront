@@ -5,7 +5,7 @@ import 'dart:async';
 class API {
   final Dio dio = Dio(
     BaseOptions(
-      baseUrl: 'https://restapi-waiwai.p0x0q.com/api/',
+      baseUrl: 'https://restapi-waiwai-aws.p0x0q.com/api/',
       connectTimeout: 5000,
       receiveTimeout: 3000,
     ),

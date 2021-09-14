@@ -32,7 +32,7 @@ class _MatchState extends State<Match> {
   void _initSocket(String roomId, String userSession) async {
     print("接続中: $roomId");
     SocketIO socket = await _manager
-        .createInstance(SocketOptions('https://restapi-waiwai.p0x0q.com:2083',
+        .createInstance(SocketOptions('https://restapi-waiwai-aws.p0x0q.com:2083',
             namespace: '/',
             query: {
               'chatid': roomId,

@@ -196,7 +196,7 @@ class User extends API {
     activityTime = userdata['activity_time'];
     activityCount = userdata['activity_count'];
     tags = userdata['tags'];
-    String baseUrl = 'https://restapi-waiwai.p0x0q.com/api';
+    String baseUrl = 'https://restapi-waiwai-aws.p0x0q.com/api';
     imageUrl = '$baseUrl/images/user/thumbnail/userid/$userId/show?i';
   }
 
