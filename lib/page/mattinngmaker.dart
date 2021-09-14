@@ -68,7 +68,7 @@ class _MattingPage extends State<MattingPage> {
     print("接続中: $roomId");
     _manager = SocketIOManager();
     final socket = await _manager
-        .createInstance(SocketOptions('https://restapi-enpit.p0x0q.com:2053',
+        .createInstance(SocketOptions('https://restapi-waiwai.p0x0q.com:2053',
             namespace: '/',
             query: {
               'chatid': roomId,
