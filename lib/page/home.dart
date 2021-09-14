@@ -56,24 +56,6 @@ class _Home extends State<Home> {
   
 
   Widget build(BuildContext context) {
-    // return CupertinoTabScaffold(
-    //   tabBar: CupertinoTabBar(
-    //     items:const <BottomNavigationBarItem>[
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.home),
-    //         label: 'Home',
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.chat),
-    //         label: 'chat',
-    //       ),
-    //     ] ,
-    //     onTap: _onItemTapped,
-    //     currentIndex: _selectedIndex,
-    //     ), 
-    //     tabBuilder: (context,index){}
-      
-    //   );
     return Scaffold(
       appBar: AppBar(
         title: Text("ホーム"),

@@ -19,15 +19,13 @@ class LikeDislike extends StatefulWidget{
 class _LikeDislike extends State<LikeDislike>{
 
   final TextStyle style1 = TextStyle(
-      fontSize: 40.0,
+      fontSize: 20.0,
       color: Colors.black
   );
   final TextStyle style2 = TextStyle(
       fontSize: 15.0,
       color: Colors.black
   );
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +37,13 @@ class _LikeDislike extends State<LikeDislike>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                  widget.auth.getUserIdBackgroundURL(widget.target_userid)),
-              radius: 100,
+            Padding(
+              padding: EdgeInsets.all(15),
+              child:CircleAvatar(
+                backgroundImage: NetworkImage(
+                    widget.auth.getUserIdBackgroundURL(widget.target_userid)),
+                radius: 100,
+              ),
             ),
 
             Align(
