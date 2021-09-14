@@ -37,11 +37,10 @@ class _Continue extends State<Continue>{
       appBar: AppBar(
         title: Text('続けますか？終了しますか？'),
       ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-
             //続ける
             Padding(
               padding: EdgeInsets.all(30),

@@ -69,7 +69,7 @@ class _Talk extends State<Talk> {
             CircleAvatar(
               backgroundImage: NetworkImage(
                   widget.auth.getUserIdBackgroundURL(widget.target_userid)),
-              radius: 100,
+              radius: 10,
             ),
 
             Text(
@@ -114,7 +114,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
   void initState() {
     super.initState();
     initAgora();
-    nextpage();
+    // nextpage();
   }
 
   Future<void> initAgora() async {
@@ -148,6 +148,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
     );
 
     await _engine.joinChannel(token, "test", null, 0);
+    nextpage();
   }
 
   void nextpage() async {
