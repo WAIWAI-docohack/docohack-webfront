@@ -84,13 +84,12 @@ class _LikeDislike extends State<LikeDislike>{
                     ),
                     onPressed: (){
                       chatapi = new ChatAPI(widget.auth.getBearer());
-                      if(chatapi.postLike(widget.target_userid,1) == 'ok'){
+                      chatapi.postLike(widget.target_userid,1);
                         print('like');
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Continue(widget.auth)),
                         );
-                      };
 
                     }
                 ),
