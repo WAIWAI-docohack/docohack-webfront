@@ -19,7 +19,7 @@ class LikeDislike extends StatefulWidget{
 class _LikeDislike extends State<LikeDislike>{
 
   final TextStyle style1 = TextStyle(
-      fontSize: 20.0,
+      fontSize: 30.0,
       color: Colors.black
   );
   final TextStyle style2 = TextStyle(
@@ -48,12 +48,12 @@ class _LikeDislike extends State<LikeDislike>{
 
             Align(
               alignment: Alignment.center,
-              child: Text('${widget.target_userid}さんと通話が終了しました．', style: style1,),
+              child: Text('通話が終了しました．', style: style1,),
             ),
 
             Align(
               alignment: Alignment.center,
-              child: Text('いかがでしたか？', style: style2,),
+              child: Text('${widget.target_userid}さんとの会話はいかがでしたか？', style: style2,),
             ),
 
             Padding(
