@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ring_sns/page/chat.dart';
 import 'package:ring_sns/page/home.dart';
 import 'package:flutter/rendering.dart';
+import 'package:ring_sns/talk/talk.dart';
 
 class Match_Result extends StatefulWidget {
   Match_Result(this.auth, this.room_id, this.target_userid);
@@ -36,7 +37,7 @@ class _Match_Result extends State<Match_Result> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => ChatDemo(widget.room_id, widget.auth)),
+          builder: (context) => Talk(widget.auth,widget.room_id,widget.target_userid)),
     );
   }
 

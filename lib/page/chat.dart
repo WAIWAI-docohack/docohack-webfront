@@ -33,14 +33,7 @@ class _ChatDemo extends State<ChatDemo> {
 
   void chatupdate(String msg, String uid) {
     _submitMessage(msg);
-    // setState(() {
-    //     if(uid==widget.auth.getUserId()){
-    //         messages_log.add(Text("\r\n${uid}:\r\n"+msg,style: TextStyle(color: Colors.green),textAlign: TextAlign.right,));
-    //       }else{
-    //       messages_log.add(Text("\r\n${uid}:\r\n"+msg,style: TextStyle(color: Colors.blue),textAlign: TextAlign.left,));
-    //       }
-    //   }
-    // );
+
   }
 
   @override
@@ -75,12 +68,7 @@ class _ChatDemo extends State<ChatDemo> {
                       )),
                   Text(''),
                 ])
-                //  Text(
-                //   "\r\n${message.userId}:\r\n" + text,
-                //   style: TextStyle(color: Colors.green),
 
-                //   textAlign: TextAlign.right,
-                // )
                 );
           } else {
             messages_log.insert(
@@ -96,18 +84,9 @@ class _ChatDemo extends State<ChatDemo> {
                       )),
                   Text(''),
                 ])
-                //  Text(
-                //   "\r\n${message.userId}:\r\n" + text,
-                //   style: TextStyle(color: Colors.green),
 
-                //   textAlign: TextAlign.right,
-                // )
                 );
-            // SpeechBubble(
-            //   "\r\n${message.userId}:\r\n" + text,
-            //   style: TextStyle(color: Colors.blue),
-            //   textAlign: TextAlign.left,
-            // ));
+
           }
         });
       });
@@ -129,19 +108,11 @@ class _ChatDemo extends State<ChatDemo> {
     socket.onConnect.listen((data) async {
       print("接続完了");
       connectRoom(socket, roomId);
-      // socket.emit('connected', []);
-      // print('[socketIO] connect: $_roomId');
-      // await Future.delayed(Duration(milliseconds: 500));
-      // print('[socketIO] emit connected message');
-      // socket.emit('API', [{'apiid': 'ConnectCheck'}]);
+
     });
     socket.onDisconnect.listen((data) => print('[socketIO] disconnect: $data'));
     socket.onConnectError
         .listen((data) => print('[socketIO] connectError: $data'));
-    // socket
-    //     .onConnectTimeout((data) => print('[socketIO] connectTimeout: $data'));
-    // socket.onError((data) => print('[socketIO] error: $data'));
-    // socket.on('event', (data) => print('[socketIO] event: $data'));
 
     socket.on('res').listen((data) {
       print('[socketIO] res: $data');
@@ -160,8 +131,7 @@ class _ChatDemo extends State<ChatDemo> {
         'goodsUsers': data[0]['good'],
         'created': data[0]['time'],
       });
-      // MessageWidget messageWidget =
-      //     MessageWidget(message, widget.auth.getUserId(), widget.auth);
+
       String t = HtmlUnescape().convert(message.text);
       setState(() => {
             if (message.userId == widget.auth.getUserId())
@@ -179,17 +149,7 @@ class _ChatDemo extends State<ChatDemo> {
                           )),
                       Text(''),
                     ])
-                    //  Text(
-                    //   "\r\n${message.userId}:\r\n" + text,
-                    //   style: TextStyle(color: Colors.green),
 
-                    //   textAlign: TextAlign.right,
-                    // )
-                    // Text(
-                    //   "\r\n${message.userId}:\r\n" + t,
-                    //   style: TextStyle(color: Colors.green),
-                    //   textAlign: TextAlign.right,
-                    // )
                     )
               }
             else
@@ -210,13 +170,7 @@ class _ChatDemo extends State<ChatDemo> {
               }
           });
     });
-    // socket.onAPI.listen(data) async{
-    //   print('[socketIO] API: $data');
-    //   if (data['apiid'] == 'RoomCheck' && !data['res']) {
-    //     connectRoom(socket, roomId);
-    //   }
-    // };
-    // socket.on('destroy', (data) => print('[socketIO] destroy: $data'));
+
 
     socket.connect();
     _sockets[roomId] = socket;

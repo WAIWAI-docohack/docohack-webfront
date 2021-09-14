@@ -5,6 +5,7 @@ import 'package:ring_sns/page/home.dart';
 import 'package:ring_sns/page/regist.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 class LoginPage extends StatefulWidget {
   @override
   //ここにイニシャライザを追加する
