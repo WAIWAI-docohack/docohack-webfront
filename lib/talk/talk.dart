@@ -29,7 +29,7 @@ class Talk extends StatefulWidget {
 }
 
 class _Talk extends State<Talk> {
-  int limit = 100;
+  int limit = 10;
   int minute = 0;
   int sec = 0;
   String infomsg = "残り時間";

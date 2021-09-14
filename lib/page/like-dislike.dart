@@ -7,6 +7,7 @@ import 'package:html_unescape/html_unescape.dart';
 import 'package:adhara_socket_io/adhara_socket_io.dart';
 import 'package:speech_bubble/speech_bubble.dart';
 import 'package:ring_sns/api/chatAPI.dart';
+import 'package:ring_sns/page/continue.dart';
 
 class LikeDislike extends StatefulWidget{
   LikeDislike(this.roomId, this.auth, this.target_userid);
@@ -85,10 +86,10 @@ class _LikeDislike extends State<LikeDislike>{
                       chatapi = new ChatAPI(widget.auth.getBearer());
                       if(chatapi.postLike(widget.target_userid,true) == 'ok'){
                         print('like');
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => Continue(widget.auth)),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Continue(widget.auth)),
+                        );
                       };
 
                     }
@@ -106,6 +107,7 @@ class _LikeDislike extends State<LikeDislike>{
                       fontSize: 20.0,
                       fontWeight: FontWeight.w800,
                     )),
+
                     style: ElevatedButton.styleFrom(
 
                       primary: Colors.white,
@@ -115,6 +117,10 @@ class _LikeDislike extends State<LikeDislike>{
                     ),
                     onPressed: (){
                       print('dislike');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Continue(widget.auth)),
+                      );
                     }
                 ),
               ),
