@@ -130,7 +130,7 @@ class _MattingPage extends State<MattingPage> {
       await account.friendRequest(targetUserid);
       await Future.delayed(Duration(milliseconds: 3000));
 
-      match_text = "チャットルームを作成しています";
+      match_text = "トークルームを作成しています";
       List<dynamic> response = await account.getFriendRequestList();
       print("リクエストしました");
       print(response.runtimeType);
@@ -145,7 +145,7 @@ class _MattingPage extends State<MattingPage> {
 
       String roomid = await chatapi.getRoomIdFriendChat(targetUserid);
       setState(() {
-        match_text = "チャットルーム${roomid}に入室します";
+        match_text = "トーク${roomid}に移動します";
       });
       print("相手ユーザーとのRoomIDは${roomid}です");
 
