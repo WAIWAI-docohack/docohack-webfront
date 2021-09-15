@@ -105,7 +105,7 @@ class _Talk_ver2 extends State<Talk_ver2> {
   bool _localUserJoined = false;
   RtcEngine _engine;
 
-  int limit = 10;
+  int limit = 30;
   int minute = 0;
   int sec = 0;
   String infomsg = "残り時間";
