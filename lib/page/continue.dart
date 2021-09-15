@@ -47,7 +47,12 @@ class _Continue extends State<Continue>{
               child:ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 250, height: 70),
                 child:ElevatedButton(
-                    child: Text('続ける'),
+                    child: Text('続ける',
+                        style:TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w800,
+                        )
+                    ),
                     style: ElevatedButton.styleFrom(
 
                       primary: Colors.white,
@@ -71,7 +76,12 @@ class _Continue extends State<Continue>{
               child:ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 250, height: 70),
                 child:ElevatedButton(
-                    child: Text('通話を終了する'),
+                    child: Text('通話を終了する',
+                        style:TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w800,
+                        )
+                    ),
                     style: ElevatedButton.styleFrom(
 
                       primary: Colors.white,

@@ -162,6 +162,9 @@ class _Talk_ver2 extends State<Talk_ver2> {
     }
 
     print("talk end");
+    _engine.leaveChannel();
+    _engine.stopPreview();
+    _engine.destroy();
     Navigator.push(
       context,
       MaterialPageRoute(
