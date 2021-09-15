@@ -18,7 +18,7 @@ class Match_Result extends StatefulWidget {
 
 class _Match_Result extends State<Match_Result> {
   int sec = 5;
-  String infomsg = "秒後チャットルームに入ります";
+  String infomsg = "秒後トークに入ります";
   //bool match_res=false;
 
   void initState() {
@@ -66,15 +66,15 @@ class _Match_Result extends State<Match_Result> {
             //Divider(),
             // Indeterminate
             //CircularProgressIndicator(),
-            RaisedButton(
-              child: Text('homeに戻る'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home(widget.auth)),
-                );
-              },
-            ),
+            // RaisedButton(
+            //   child: Text('homeに戻る'),
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => Home(widget.auth)),
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),
