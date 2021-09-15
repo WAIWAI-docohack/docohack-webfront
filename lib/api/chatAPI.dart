@@ -29,7 +29,7 @@ class ChatAPI extends API {
     });
     dynamic response = await postImageRequest(url, formData);
     String filename = response['file_name'];
-    return 'https://restapi-waiwai-aws.p0x0q.com/api/images/cupy/$filename';
+    return 'https://restapi-waiwai.p0x0q.com/api/images/cupy/$filename';
   }
 
   Future<List<dynamic>> searchThreads(String query) async {
@@ -135,7 +135,7 @@ class ChatAPI extends API {
   }
 
   String chatRoomImageUrl(String roomId) {
-    return 'https://restapi-waiwai-aws.p0x0q.com/api/images/room/background/roomid/$roomId/show?i';
+    return 'https://restapi-waiwai.p0x0q.com/api/images/room/background/roomid/$roomId/show?i';
   }
 }
 
